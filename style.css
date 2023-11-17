@@ -1,0 +1,447 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteúdo do style.css */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+/* Outras regras de estilo */
+
+
+/* Estilizando os links na barra de navegação */
+.navbar a {
+  color: #fff; /* Cor do texto dos links */
+  text-decoration: none; /* Remover sublinhado dos links */
+  margin: 0 15px; /* Espaçamento entre os links */
+  font-size: 16px; /* Tamanho da fonte dos links */
+}
+
+/* Estilizando o botão de busca */
+.navbar .btn-outline-success {
+  color: #fff; /* Cor do texto do botão */
+  background-color: #28a745; /* Cor de fundo do botão */
+  border: 1px solid #28a745; /* Borda do botão */
+}
+
+/* Estilizando o logotipo (imagem) */
+.navbar img {
+  max-height: 80px; /* Altura máxima da imagem do logotipo */
+}
+
+/* Estilizando o menu suspenso (dropdown) */
+.navbar .submenu {
+  display: none; /* Oculta o menu suspenso por padrão */
+  position: absolute;
+  background-color: #333; /* Cor de fundo do menu suspenso */
+  z-index: 1;
+}
+
+/* Estilizando os itens do menu suspenso */
+.navbar .submenu li {
+  display: block;
+}
+
+/* Estilizando os itens do menu suspenso (links) */
+.navbar .submenu li a {
+  color: #fff; /* Cor do texto dos itens do menu suspenso */
+  text-decoration: none; /* Remover sublinhado dos itens do menu suspenso */
+  padding: 10px 15px; /* Espaçamento interno dos itens do menu suspenso */
+}
+
+/* Estilizando o menu suspenso quando o mouse está sobre ele */
+.navbar .nav-item:hover .submenu {
+  display: block; /* Exibe o menu suspenso quando o mouse está sobre o item do menu */
+}
+
+/* Reset de estilos para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}.esqueceu-senha a {
+    color: black; /* Altere a cor conforme desejado */
+text-decoration:none;
+margin-left: 280px;
+    /* Outros estilos de texto, como tamanho da fonte, negrito, etc., podem ser adicionados aqui */
+}
+.cadastro a {
+  
+text-decoration:none;
+    /* Outros estilos de texto, como tamanho da fonte, negrito, etc., podem ser adicionados aqui */
+}
+
+/* Estilos globais para o corpo do site */
+#bodyIndex {
+    background: rgb(0,140,218);
+    background: linear-gradient(90deg, rgba(0,140,218,0.3533788515406162) 0%, rgba(194,117,1,0.26094187675070024) 45%, rgba(0,98,153,0.29175420168067223) 100%);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}#bodyL{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+  #bodyAgendamentodeServiço{
+background-color: rgb(153, 102, 204);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}#bodyAgendamento.pagina-agendamento {
+    min-height: 100vh; /* Garante que o conteúdo da página de pagina-cadastro-pet tenha pelo menos a altura da viewport. */
+    position: relative;
+}#bodyPet.pagina-pagina-agendamento footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+
+}
+    #bodyCadastroPet{
+        background: linear-gradient(135deg, #99ccff, #ffcc99, #ccff99);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}#bodyEsqueceuSenha{
+    background: rgb(84,73,15);
+    background: radial-gradient(circle, rgba(84,73,15,0.4234068627450981) 0%, rgba(255,214,5,0.2329306722689075) 100%);
+}
+#bodyPet.pagina-cadastro-pet {
+    min-height: 100vh; /* Garante que o conteúdo da página de pagina-cadastro-pet tenha pelo menos a altura da viewport. */
+    position: relative;
+}#bodyPet.pagina-cadastro-pet footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+
+}#bodyLogin.pagina-login {
+    background: rgb(47,42,0);
+    background: radial-gradient(circle, rgba(47,42,0,0.4290091036414566) 4%, rgba(10,33,31,0.4318102240896359) 43%, rgba(27,92,126,0.5298494397759104) 94%);
+    min-height: 100vh; /* Garante que o conteúdo da página de login tenha pelo menos a altura da viewport. */
+    position: relative;
+}#bodyLogin.pagina-login footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+#bodyRacao {
+    background: rgb(93,96,0);
+    background: radial-gradient(circle, rgba(93,96,0,0.36458333333333337) 0%, rgba(0,130,134,0.3085609243697479) 100%);
+    margin: 0;
+    padding: 0
+
+}#bodyAcessorios {
+    background: rgb(96,95,0);
+    background: radial-gradient(circle, rgba(96,95,0,0.36458333333333337) 0%, rgba(0,111,134,0.3085609243697479) 100%);
+    margin: 0;
+    padding: 0;
+}#bodyCadastro {
+    background: rgb(128,113,0);
+    background: linear-gradient(321deg, rgba(128,113,0,0.2329306722689075) 4%, rgba(10,33,31,0.4066001400560224) 43%, rgba(0,89,135,0.5298494397759104) 94%);
+    margin: 0;
+    padding: 0}
+#bodyClubedeMembros {
+    background-color: rgb(24, 208, 162);
+    margin: 0;
+    padding: 0
+}#bodyPedidos {
+    background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,0.5158438375350141) 0%, rgba(113,95,0,0.4542191876750701) 100%);
+    margin: 0;
+    padding: 0
+}#bodyEticaseConduta {
+    background: rgb(51, 47, 22);
+    background: radial-gradient(circle, rgba(29, 28, 23, 0) 0%, rgba(1,1,1,0.4822303921568627) 100%);
+    margin: 0;
+    padding: 0
+    
+}#bodyMeuProduto{
+    background: rgb(112,94,11);
+background: linear-gradient(90deg, rgba(112,94,11,0.30575980392156865) 0%, rgba(69,73,0,0.21612394957983194) 35%, rgba(27,116,134,0.35057773109243695) 100%);
+}
+#bodyMeuCarrinho {
+    background: rgb(97, 124, 128);
+    background: radial-gradient(circle, rgba(184, 217, 221, 0.849) 0%, rgba(140,127,80,1) 100%);
+    margin: 0;
+    padding: 0
+ }#bodyPedidoConfirmado {
+    background-image: url('img/serpentina.jpg');
+    background-size: cover; /* Para cobrir todo o fundo */
+    background-position: center; /* Para centralizar a imagem */
+    background-repeat: no-repeat; /* Para evitar a repetição da imagem */
+    margin: 0; /* Remover margens padrão do body */
+    font-family: 'Arial', sans-serif; /* Especificar a fonte desejada */
+    /* Adicione estilos adicionais conforme necessário */
+
+    margin: 0;
+    padding: 0
+   
+
+ }#bodyPoliticadoSite {
+    background: rgb(18,168,186);
+    background: radial-gradient(circle, rgba(18,168,186,0.23853291316526615) 0%, rgba(0,50,22,0.3309698879551821) 100%);
+    margin: 0;
+    padding: 0
+ }#bodySobreNos {
+    background: rgb(255,215,0);
+    background: radial-gradient(circle, rgba(255,215,0,0) 0%, rgba(1,1,1,0.4822303921568627) 100%);
+    margin: 0;
+    padding: 0
+
+ }#bodyAgendamentodeServiço {
+    background: rgb(90,122,116);
+    background: linear-gradient(90deg, rgba(90,122,116,0.7707457983193278) 0%, rgba(83,121,9,0.40379901960784315) 35%, rgba(127,134,6,0.4990371148459384) 100%);
+    margin: 0;
+    padding: 0;
+}
+#bodyProdutos{
+  
+    background: rgb(77,139,127);
+background: linear-gradient(90deg, rgba(77,139,127,0.7707457983193278) 0%, rgba(3,25,80,0.2413340336134454) 45%, rgba(127,134,6,0.4430147058823529) 100%);
+margin: 0;
+padding: 0;
+}
+#bodyServicosPet {
+    background: rgb(0,0,0);
+    background: linear-gradient(325deg, rgba(0,0,0,0.4290091036414566) 20%, rgba(140,107,0,0.45702030812324934) 59%, rgba(0,0,0,0.33657212885154064) 66%);
+    margin: 0;
+    padding: 0;
+}
+/* Altera a cor do botão para preto com letras douradas */
+.btn.btn-primary {
+  background-color: black; /* Cor de fundo preto */
+  color: gold; /* Cor do texto dourado */
+}
+
+/* Altera a cor do botão ao passar o mouse por cima */
+.btn.btn-primary:hover {
+  background-color: gold; /* Cor de fundo dourado ao passar o mouse por cima */
+  color: black; /* Cor do texto preto ao passar o mouse por cima */
+}
+/* style.css */
+.btn-custom {
+    background-color: black; /* Define o fundo preto */
+    color: gold; /* Define as letras douradas */
+    margin: 0 auto; /* Centraliza horizontalmente o botão */
+}
+/*detalhes produto */
+ .product-details-box {
+            background-color: #f5f5f5; /* Cor de fundo */
+            padding: 20px; /* Espaçamento interno */
+            border: 1px solid #ddd; /* Borda */
+            border-radius: 5px; /* Cantos arredondados */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }#cadastro-pet-container {/*centralizar form*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.small {
+    font-size: 14px; /* Tamanho da fonte menor */
+    line-height: 1.2; /* Espaçamento entre linhas menor */
+}
+      
+/* Estilos para cabeçalho (header) */
+header {
+    background-color: rgba(56, 52, 52, 0.967);
+    padding: 10px;
+    text-align: center;
+    flex-direction: column;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para o conteúdo do site */
+.content {
+    flex: 1;
+}
+
+/* Estilos para títulos (h1) */
+h1 {
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Estilos para o container de informações */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Estilos para grupos de informações */
+.info-group {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Estilos para as caixas de informações */
+.info-box {
+    width: 200px;
+    padding: 20px;
+    border: 1px solid #fdfdfd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(250, 249, 249, 0.778);
+}
+
+/* Estilos para títulos de informações */
+.info-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o conteúdo das informações */
+.info-content {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Estilos para o formulário de contato */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px #ccc;
+    color: #ffffff;
+}
+
+/* Estilos para grupos de formulários */
+.form-group {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Estilos para rótulos de formulários */
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilos para campos de entrada de texto */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para a área de texto do formulário */
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos para o botão de envio do formulário */
+.form-submit {
+    background-color: hsl(123, 77%, 36%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Estilos para o rodapé */
+footer {
+  /*position: fixed;  Fixa o rodapé na parte inferior da janela do navegador */
+  bottom: 0; /* Define a distância entre o rodapé e o final da janela */
+  width: 100%; /* Ocupa toda a largura da janela */
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto do rodapé */
+  padding: 10px; /* Espaçamento interno para melhorar a legibilidade */
+}
+/* Estilos para o container do rodapé */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para as seções do rodapé */
+.footer-section {
+    flex: 1;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os links no rodapé */
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para os títulos das seções do rodapé */
+.footer-section h4 {
+    font-size: 18px;
+}
+
+/* Estilos para os ícones de míd*/
+
+/* Estilo Imagem Carrosel */
+.carousel-img {
+    max-width: 100%; /* Define a largura máxima como 100% do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  #criar{
+    text-decoration: none;
+  }
+  
+  .product-card {
+    width: 100px; /* Largura do cartão de produto */
+    transition: transform 0.2s; /* Adiciona uma transição suave para o efeito de zoom */
+  }
+  
+  .product-card:hover {
+    transform: scale(1.1); /* Aplica um zoom de 110% quando o mouse passa por cima */
+  }
+  /* Define o tamanho das imagens dos produtos */
+.product-image {
+    width: 130px; /* Ajuste o valor conforme necessário */
+    height: auto; /* Isso manterá a proporção da imagem */
+  }
+  
+  .product-card {
+    border: 1px solid #000; /* Cor e largura da borda */
+    border-radius: 5px; /* Cantos arredondados */
+  }
+  
