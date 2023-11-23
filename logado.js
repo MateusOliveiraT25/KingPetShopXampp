@@ -1,32 +1,27 @@
-  // Função para verificar se o usuário está logado
-  function verificarLogin() {
-    // Suponha que você tenha uma API no backend que verifica o estado de login
-    // Esta é uma chamada de exemplo simulada usando a função setTimeout
-    setTimeout(function() {
-        var usuarioLogado = true; // Suponha que o servidor responda que o usuário está logado
-        exibirMenu(usuarioLogado);
-    }, 1000); // Simula uma chamada assíncrona para o servidor
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // Verificar se o usuário está logado (você pode ajustar isso conforme sua lógica de login)
+    var usuarioLogado = true; // Suponha que o usuário está logado
 
-// Função para exibir o menu com base no estado de login
-function exibirMenu(usuarioLogado) {
+    // Selecionar o contêiner do menu
     var menuContainer = document.getElementById("menu-container");
 
     if (usuarioLogado) {
-        var nomeUsuario = "Nome do Usuário";  // Substitua isso pelo nome real do usuário
-        menuContainer.innerHTML = "<p>Bem-vindo, " + nomeUsuario + "!</p>" +
-            "<ul>" +
-            "<li>Opção 1</li>" +
-            "<li>Opção 2</li>" +
-            "<li><a href='#'>Sair</a></li>" +
-            "</ul>";
-    } else {
-        menuContainer.innerHTML = "<ul>" +
-            "<li><a href='#'>Fazer login</a></li>" +
-            "<li><a href='#'>Sair</a></li>" +
-            "</ul>";
-    }
-}
+        // Se o usuário estiver logado, criar elementos de área do usuário
+        var usuarioContainer = document.createElement("div");
+        usuarioContainer.classList.add("usuario-container");
 
-// Chamada inicial para verificar o estado de login
-verificarLogin();
+        // Adicionar nome do usuário
+        var nomeUsuario = document.createElement("span");
+        nomeUsuario.textContent = "Olá, Nome do Usuário";
+        usuarioContainer.appendChild(nomeUsuario);
+
+        // Adicionar link de logout
+        var linkLogout = document.createElement("a");
+        linkLogout.href = "logout.php"; // Substitua pelo caminho correto para a página de logout
+        linkLogout.textContent = "Sair";
+        usuarioContainer.appendChild(linkLogout);
+
+        // Adicionar área do usuário ao contêiner do menu
+        menuContainer.appendChild(usuarioContainer);
+    }
+});

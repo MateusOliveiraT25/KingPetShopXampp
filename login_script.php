@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Autenticação bem-sucedida
                 $_SESSION["usuario_id"] = $row["id"];
                 echo "Login bem-sucedido. Redirecionando...";
-                header("Location: http://localhost/king/dashboard.php"); // Redirecionar para a página de dashboard ou outra página após o login
+                header("Location: http://localhost/KingPetShopXampp/dashboard.php"); // Redirecionar para a página de dashboard ou outra página após o login
                 exit();
             } else {
                 echo "Senha incorreta. Tente novamente.";

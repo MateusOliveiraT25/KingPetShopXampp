@@ -14,20 +14,37 @@ if ($conn->connect_error) {
 
 // Processamento dos dados do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
+    // Validar os dados do formulário (substitua com validações específicas)
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT); // Recomendado armazenar senhas de forma segura
+    $endereco = $_POST["endereco"];
+    $cep = $_POST["cep"];
+    $estado = $_POST["estado"];
+    $cidade = $_POST["cidade"];
 
-    // Inserir os dados no banco de dados
-    $sql = "INSERT INTO usuarios (email, senha) VALUES (?, ?)";
+    // Verificar se a validação foi bem-sucedida
+    if ($email === false) {
+        echo "Email inválido. Por favor, forneça um email válido.";
+        exit();
+    }
+
+    // Inserir os dados no banco de dados usando uma consulta preparada
+    $sql = "INSERT INTO usuarios (email, senha, endereco, cep, estado, cidade) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email, $senha);
+
+    if (!$stmt) {
+        die("Erro na preparação da consulta: " . $conn->error);
+    }
+
+    $stmt->bind_param("ssssss", $email, $senha, $endereco, $cep, $estado, $cidade);
 
     if ($stmt->execute()) {
         // Cadastro bem-sucedido. Redirecione para a página de login.
-        header("Location:http://localhost/king/login.html");
+        header("Location: http://localhost/KingPetShopXampp/login.html");
         exit();
     } else {
-        echo "Erro no cadastro: " . $stmt->error;
+        echo "Erro no cadastro. Por favor, tente novamente mais tarde.";
+        // Pode ser interessante registrar os detalhes completos do erro em logs do servidor
     }
 
     $stmt->close();
