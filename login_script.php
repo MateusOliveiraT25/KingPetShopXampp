@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $loginEmail = $_POST["loginEmail"];
         $loginSenha = $_POST["loginSenha"];
 
-        $sql = "SELECT * FROM usuarios WHERE email = ?";
+        $sql = "SELECT id, senha FROM usuarios WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $loginEmail);
         $stmt->execute();
@@ -31,11 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($loginSenha, $row["senha"])) {
                 // Autenticação bem-sucedida
                 $_SESSION["usuario_id"] = $row["id"];
-                echo "Login bem-sucedido. Redirecionando...";
-                header("Location: http://localhost/KingPetShopXampp/dashboard.php"); // Redirecionar para a página de dashboard ou outra página após o login
+                header("Location: http://localhost/KingPetShopXampp/navbar.php"); // Redirecionar para a página de dashboard ou outra página após o login
                 exit();
             } else {
-                echo "Senha incorreta. Tente novamente.";
+                echo "Credenciais incorretas. Tente novamente.";
             }
         } else {
             echo "Usuário não encontrado. Verifique o email e tente novamente.";

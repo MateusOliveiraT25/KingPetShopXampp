@@ -1,35 +1,34 @@
-<!-- navbar.php -->
 <?php
 session_start();
 ?>
 
-<header>
-  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-    <!-- ... (código do navbar omitido para brevidade) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Loja</title>
+</head>
+<body>
 
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <!-- ... (itens do menu omitidos para brevidade) -->
+<nav>
+    
 
-      <?php
-      if (isset($_SESSION["usuario_id"])) {
-        echo '<li class="nav-item">
-                <span class="nav-link active"><i class="fas fa-user fa-lg"></i> Bem-vindo, ' . $_SESSION["nomeUsuario"] . '</span>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="logout.php">Sair</a>
-              </li>';
-      } else {
-        echo '<li class="nav-login">
-                <a href="cadastro.html" class="nav-link active">Cadastro</a>
-              </li>
-              <li class="nav-login">
-                <a href="login.html" class="nav-link active">Login</a>
-              </li>';
-      }
-      ?>
-
+        <?php
+        // Verifica se o usuário está autenticado
+        if (isset($_SESSION["usuario_id"])) {
+            // Se sim, mostra informações do usuário e opção para sair
+            $usuario_email = isset($_SESSION["usuario_email"]) ? $_SESSION["usuario_email"] : "";
+            echo '<li><a href="minha_conta.html">Minha Conta</a></li>';
+            echo '<li><a href="meus_pedidos.html">Meus Pedidos</a></li>';
+            echo '<li><a href="logout.php">Sair</a></li>';
+        } else {
+            // Se não, mostra a opção para fazer login
+            echo '<li><a href="login.html">Login</a></li>';
+        }
+        ?>
     </ul>
+</nav>
 
-    <!-- ... (código do formulário de busca omitido para brevidade) -->
-  </nav>
-</header>
+</body>
+</html>
