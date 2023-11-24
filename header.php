@@ -1,4 +1,8 @@
 <!-- header.html -->
+<?php
+session_start();
+?>
+
 <header>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
@@ -48,8 +52,18 @@
               
             </ul>
           </li>
-
-        </ul>
+          <?php
+        if (isset($_SESSION["usuario_id"])) {
+            $usuario_email = isset($_SESSION["usuario_email"]) ? $_SESSION["usuario_email"] : "";
+            echo '<li><a href="minha_conta.html"><i class="fa fa-user"></i> Minha Conta</a></li>';
+            echo '<li><a href="meus_pedidos.html"><i class="fa fa-list"></i> Meus Pedidos</a></li>';
+            echo '<li><a href="logout.php"><i class="fa fa-sign-out"></i> Sair</a></li>';
+        } else {
+            echo '<li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>';
+        }
+        ?>
+            </ul>
+</nav>
 
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar Eventos " aria-label="Buscar">
