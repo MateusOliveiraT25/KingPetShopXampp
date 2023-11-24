@@ -445,3 +445,12 @@ footer {
     border-radius: 5px; /* Cantos arredondados */
   }
   
+  .search-form {
+    margin-left: auto; /* Move o formulário para a parte direita da barra de navegação */
+    display: flex;
+    align-items: center;
+  }
+
+  .search-form input {
+    margin-right: 10px;
+  }

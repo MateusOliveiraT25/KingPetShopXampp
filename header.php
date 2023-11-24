@@ -46,31 +46,29 @@ session_start();
             <a href="carrinho.html" class="nav-link active">
               <i class="fas fa-shopping-cart fa-lg"></i> <!-- Ícone de carrinho -->
             </a>
-            <ul class="submenu">
-              <li><a href="minha_conta.html">Minha Conta</a></li>
-              <li><a href="meus_pedidos.html">Meus Pedidos</a></li>
-              
-            </ul>
+         
           </li>
           <?php
-        if (isset($_SESSION["usuario_id"])) {
+          if (isset($_SESSION["usuario_id"])) {
             $usuario_email = isset($_SESSION["usuario_email"]) ? $_SESSION["usuario_email"] : "";
-            echo '<li><a href="minha_conta.html"><i class="fa fa-user"></i> Minha Conta</a></li>';
-            echo '<li><a href="meus_pedidos.html"><i class="fa fa-list"></i> Meus Pedidos</a></li>';
-            echo '<li><a href="logout.php"><i class="fa fa-sign-out"></i> Sair</a></li>';
-        } else {
-            echo '<li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>';
-        }
-        ?>
-            </ul>
-</nav>
+            echo '<li class="nav-item"><a href="minha_conta.html" class="nav-link"><i class="fa fa-user"></i> Minha Conta</a></li>';
+            echo '<li class="nav-item"><a href="meus_pedidos.html" class="nav-link"><i class="fa fa-list"></i> Meus Pedidos</a></li>';
+            echo '<li class="nav-item"><a href="logout.php" class="nav-link"><i class="fa fa-sign-out"></i> Sair</a></li>';
+          } else {
+            echo '<li class="nav-item"><a href="login.html" class="nav-link"><i class="fa fa-sign-in"></i> Login</a></li>';
+          }
+          ?>
+     
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar Eventos " aria-label="Buscar">
+     <div class="search-form">
+     <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+          </form>
       </div>
     </div>
+  </nav>
+</header>
       <!-- Adicionando um elemento para o menu dinâmico -->
         <div id="menu-container"></div>
     </div>
