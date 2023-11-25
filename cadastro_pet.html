@@ -75,7 +75,7 @@
  
 <div class="container">
     <h1 class="text-center">Cadastro de Cachorro</h1>
-    <form action="/processar_cadastro.php" method="POST">
+    <form id="cadastroForm" action="http://localhost/KingPetShopXampp/seu_script_de_envio_pet.php" method="post" onsubmit="enviar()">
         <div class="form-group row">
             <label for="nome" class="col-sm-3 col-form-label">Nome do Cachorro:</label>
             <div class="col-sm-9">
@@ -143,9 +143,10 @@ check-input">
             </div>
         </div>
         <div class="form-group row">
-            <label for="data_nascimento" class="col-sm-3 col-form-label">Data de Nascimento do Cachorro:</label>
-            <div class="col-sm-9">
-                <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required>
+          <label class="col-sm-4" for="data">Data Preferida:</label>
+          <div class="col-sm-8">
+              <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" required
+              min="2023-10-27" max="2023-12-31">
             </div>
         </div>
         <div class="form-group row">
