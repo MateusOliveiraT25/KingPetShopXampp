@@ -12,10 +12,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         die("Falha na conexão com o banco de dados: " . $conn->connect_error);
     }
+// Verificar se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Conectar ao banco de dados
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "king";
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Verificar a conexão
+    if ($conn->connect_error) {
+        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+    }
 
     // Verificar se o campo do produto a ser removido está presente no formulário
     if (isset($_POST['produto_id'])) {
         $produto_id = $_POST['produto_id'];
+
+        // Debug: Exibir o ID do produto para verificar se está correto
+        echo "Produto ID: " . $produto_id;
 
         // Preparar e executar a consulta SQL para remover o produto
         $sql = "DELETE FROM produtos WHERE id = ?";
@@ -33,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Fechar a conexão com o banco de dados
     $conn->close();
-}
+}}
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $result = $conn->query($sql);
 
                 // Exibir opções do produto no formulário
-                if ($result->num_rows > 0) {
+                if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo '<option value="' . $row['id'] . '">' . $row['nome'] . '</option>';
                     }

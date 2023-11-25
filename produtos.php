@@ -48,20 +48,20 @@
 
             // Exibir os produtos
             if ($result->num_rows > 0) {
+                echo '<div class="row">';
                 while ($row = $result->fetch_assoc()) {
-                    echo '<div class="row">
-                            <div class="col">
-                                <div class="product-card" style="width: 18rem;">
-                                    <img src="http://localhost/img/' . $row['imagem'] . '" class="card-img-top product-image" alt="Imagem do Produto">
-                                    <div class="card-body">
-                                        <h5 class="card-title">' . $row['nome'] . '</h5>
-                                        <p class="card-text">' . $row['descricao'] . '</p>
-                                        <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'' . $row['nome'] . '\', ' . $row['id'] . ', ' . $row['preco'] . ')">Adicionar ao Carrinho</a>
-                                    </div>
+                    echo '<div class="col-md-4">
+                            <div class="product-card mb-3" style="width: 18rem;">
+                                <img src="http://localhost/img/' . $row['imagem'] . '" class="card-img-top product-image" alt="Imagem do Produto">
+                                <div class="card-body">
+                                    <h5 class="card-title">' . $row['nome'] . '</h5>
+                                    <p class="card-text">' . $row['descricao'] . '</p>
+                                    <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'' . $row['nome'] . '\', ' . $row['id'] . ', ' . $row['preco'] . ')">Adicionar ao Carrinho</a>
                                 </div>
                             </div>
                         </div>';
                 }
+                echo '</div>';
             } else {
                 echo "<p>Nenhum produto disponível.</p>";
             }
@@ -69,7 +69,6 @@
             // Fechar a conexão com o banco de dados
             $conn->close();
         ?>
-
     </div>
 
     <!-- Rodapé da Página -->
