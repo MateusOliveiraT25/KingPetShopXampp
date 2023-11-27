@@ -65,13 +65,17 @@
                 <input type="text" class="form-control" id="endereco"  name="endereco">
             </div>
         </div>
-        
         <div class="row">
-            <div class="offset-3 col-sm-6 offset-3">
-                <label for="cep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="cep"  name="cep">
-            </div>
-        </div>
+    <div class="offset-3 col-sm-6 offset-3">
+        <label for="cep" class="form-label">CEP</label>
+        <input type="text" class="form-control" id="cep" name="cep">
+        <button type="button" class="btn btn-primary" onclick="consultarCEP()">Consultar</button>
+
+        <!-- Resultado da consulta -->
+        <div id="resultadoCEP"></div>
+    </div>
+</div>
+
         
         <div class="row">
             <div class="offset-3 col-sm-6 offset-3">
@@ -140,3 +144,4 @@
 </body>
 </html>
 <script src="cadastro.js"></script>
+<script src="cep.js"></script>
