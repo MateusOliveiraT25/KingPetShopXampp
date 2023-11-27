@@ -454,3 +454,7 @@ footer {
   .search-form input {
     margin-right: 10px;
   }
+.product-image {
+    height: 200px; /* Ajuste conforme necessário */
+    object-fit: cover;
+}
