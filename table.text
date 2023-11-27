@@ -30,3 +30,11 @@ CREATE TABLE agendamento_servico (
     funcionario VARCHAR(255) NOT NULL,
     preferencia VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    descricao TEXT,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
