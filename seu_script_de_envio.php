@@ -17,7 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar os dados do formulário (substitua com validações específicas)
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT); // Recomendado armazenar senhas de forma segura
-    $endereco = $_POST["endereco"];
+    $logradouro = $_POST["logradouro"];
+    $numero = $_POST["numero"];
+    $complemento = $_POST["complemento"];
+    $bairro = $_POST["bairro"];
     $cep = $_POST["cep"];
     $estado = $_POST["estado"];
     $cidade = $_POST["cidade"];
@@ -29,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserir os dados no banco de dados usando uma consulta preparada
-    $sql = "INSERT INTO usuarios (email, senha, endereco, cep, estado, cidade) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO usuarios (email, senha, logradouro, numero, complemento, bairro, cep, estado, cidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
         die("Erro na preparação da consulta: " . $conn->error);
     }
 
-    $stmt->bind_param("ssssss", $email, $senha, $endereco, $cep, $estado, $cidade);
+    $stmt->bind_param("sssssssss", $email, $senha, $logradouro, $numero, $complemento, $bairro, $cep, $estado, $cidade);
 
     if ($stmt->execute()) {
         // Cadastro bem-sucedido. Redirecione para a página de login.
