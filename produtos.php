@@ -71,6 +71,24 @@
         ?>
     </div>
 
+    <!-- Inclua este script na parte inferior da sua página de produtos -->
+<script>
+    function adicionarAoCarrinho(nome, id, preco) {
+        // Enviar solicitação AJAX para o servidor PHP
+        $.ajax({
+            type: "POST",
+            url: "adicionar_ao_carrinho.php", // Nomeie o arquivo PHP responsável por adicionar ao carrinho
+            data: {nome: nome, id: id, preco: preco},
+            success: function(response) {
+                alert(response); // Exibir uma mensagem de sucesso ou erro
+            },
+            error: function() {
+                alert("Erro ao adicionar ao carrinho");
+            }
+        });
+    }
+</script>
+
     <!-- Rodapé da Página -->
     <footer>
         <p>&copy; 2023 King Pet Shop</p>
