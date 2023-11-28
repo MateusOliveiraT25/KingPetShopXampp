@@ -15,6 +15,7 @@ if ($conn->connect_error) {
 // Processamento dos dados do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar os dados do formulário (substitua com validações específicas)
+     $nome = $_POST["nome"];
     $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
     $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT); // Recomendado armazenar senhas de forma segura
     $logradouro = $_POST["logradouro"];
@@ -30,6 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Email inválido. Por favor, forneça um email válido.";
         exit();
     }
+      /*  // Verificar se a validação foi bem-sucedida
+    if (empty($nomeCompleto) || empty($email) || empty($senha) || empty($cep) || empty($estado) || empty($cidade)) {
+        $_SESSION["error_message"] = "Por favor, preencha todos os campos obrigatórios.";
+        header("Location: http://localhost/KingPetShopXampp/registro.html");
+        exit();
+    }*/
 
     // Inserir os dados no banco de dados usando uma consulta preparada
     $sql = "INSERT INTO usuarios (email, senha, logradouro, numero, complemento, bairro, cep, estado, cidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
