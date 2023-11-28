@@ -25,11 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssds", $nome, $descricao, $preco, $imagem);
 
     // Verifica se a inserção foi bem-sucedida
-    if ($stmt->execute()) {
-        echo "Produto adicionado com sucesso!";
-    } else {
-        echo "Erro ao remover produto: " . $stmt->error;
-    }
+if ($stmt->execute()) {
+    // Defina uma mensagem de sucesso na variável de sessão
+    $_SESSION["success_message"] = "Produto adicionado com sucesso!";
+} else {
+    // Defina uma mensagem de erro na variável de sessão
+    $_SESSION["error_message"] = "Erro ao adicionar produto: " . $stmt->error;
+}
+
+// Redirecione de volta à página do usuário
+header("Location: {$_SERVER['HTTP_REFERER']}");
+exit();
 
     $stmt->close();
 }
