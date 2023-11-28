@@ -36,5 +36,6 @@ CREATE TABLE produtos (
     nome VARCHAR(255) NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
     descricao TEXT,
+    imagem VARCHAR(255), -- Assuming you'll store the image path or URL
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

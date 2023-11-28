@@ -26,11 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verifica se a inserção foi bem-sucedida
     if ($stmt->execute()) {
-        // Redirecionar de volta à página de produtos após a adição bem-sucedida
-        header("Location: http://localhost/KingPetShopXampp/produtos.php");
-        exit();
+        echo "Produto adicionado com sucesso!";
     } else {
-        echo "Erro ao inserir produto: " . $stmt->error;
+        echo "Erro ao remover produto: " . $stmt->error;
     }
 
     $stmt->close();
