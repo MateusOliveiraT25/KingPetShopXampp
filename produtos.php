@@ -45,29 +45,35 @@
             // Processar a consulta para obter todos os produtos
             $sql = "SELECT * FROM produtos";
             $result = $conn->query($sql);
+// Processar a consulta para obter todos os produtos
+$sql = "SELECT * FROM produtos";
+$result = $conn->query($sql);
 
-            // Exibir os produtos
-            if ($result->num_rows > 0) {
-                echo '<div class="row">';
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="col-md-4">
-                            <div class="product-card mb-3" style="width: 18rem;">
-                                <img src="http://localhost/img/' . $row['imagem'] . '" class="card-img-top product-image" alt="Imagem do Produto">
-                                <div class="card-body">
-                                    <h5 class="card-title">' . $row['nome'] . '</h5>
-                                    <p class="card-text">' . $row['descricao'] . '</p>
-                                    <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'' . $row['nome'] . '\', ' . $row['id'] . ', ' . $row['preco'] . ')">Adicionar ao Carrinho</a>
-                                </div>
-                            </div>
-                        </div>';
-                }
-                echo '</div>';
-            } else {
-                echo "<p>Nenhum produto disponível.</p>";
-            }
+// Exibir os produtos
+if ($result->num_rows > 0) {
+    echo '<div class="row">';
+    while ($row = $result->fetch_assoc()) {
+        $caminho_imagem = "http://localhost/img/" . $row['imagem'];
 
-            // Fechar a conexão com o banco de dados
-            $conn->close();
+        echo '<div class="col-md-4">
+                <div class="product-card mb-3" style="width: 18rem;">
+                    <img src="' . $caminho_imagem . '" class="card-img-top product-image" alt="Imagem do Produto">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $row['nome'] . '</h5>
+                        <p class="card-text">' . $row['descricao'] . '</p>
+                        <p class="card-text">' . $row['preco'] . '</p>
+                        <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'' . $row['nome'] . '\', ' . $row['id'] . ', ' . $row['preco'] . ')">Adicionar ao Carrinho</a>
+                    </div>
+                </div>
+            </div>';
+    }
+    echo '</div>';
+} else {
+    echo "<p>Nenhum produto disponível.</p>";
+}
+
+// Fechar a conexão com o banco de dados
+$conn->close();
         ?>
     </div>
 
