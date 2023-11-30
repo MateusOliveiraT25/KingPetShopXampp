@@ -52,21 +52,41 @@ $result = $conn->query($sql);
 // Exibir os produtos
 if ($result->num_rows > 0) {
     echo '<div class="row">';
+    
     while ($row = $result->fetch_assoc()) {
-        $caminho_imagem = "http://localhost/img/" . $row['imagem'];
+        $caminho_imagem = ""; . htmlspecialchars($row['imagem']);
 
-        echo '<div class="col-md-4">
+        // Verifica se a imagem existe
+        if (file_exists($caminho_imagem)) {
+            $imagem_html = '<img src="' . $caminho_imagem . '" class="card-img-top product-image" alt="Imagem do Produto">';
+        } else {
+            // Se a imagem não existir, use uma imagem padrão ou exiba uma mensagem
+            $imagem_html = '<img src="caminho/imagem/padrao.jpg" class="card-img-top product-image" alt="Imagem Padrão">';
+            // ou $imagem_html = '<p>Imagem não disponível</p>';
+        }
+
+        echo sprintf(
+            '<div class="col-md-4">
                 <div class="product-card mb-3" style="width: 18rem;">
-                    <img src="' . $caminho_imagem . '" class="card-img-top product-image" alt="Imagem do Produto">
+                    %s
                     <div class="card-body">
-                        <h5 class="card-title">' . $row['nome'] . '</h5>
-                        <p class="card-text">' . $row['descricao'] . '</p>
-                        <p class="card-text">' . $row['preco'] . '</p>
-                        <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'' . $row['nome'] . '\', ' . $row['id'] . ', ' . $row['preco'] . ')">Adicionar ao Carrinho</a>
+                        <h5 class="card-title">%s</h5>
+                        <p class="card-text">%s</p>
+                        <p class="card-text">%s</p>
+                        <a href="#" class="btn btn-primary btn-block btn-lg" onclick="adicionarAoCarrinho(\'%s\', %d, %f)">Adicionar ao Carrinho</a>
                     </div>
                 </div>
-            </div>';
+            </div>',
+            $imagem_html,
+            htmlspecialchars($row['nome']),
+            htmlspecialchars($row['descricao']),
+            number_format($row['preco'], 2, ',', '.'), // Formatação de preço
+            htmlspecialchars($row['nome']),
+            $row['id'],
+            $row['preco']
+        );
     }
+
     echo '</div>';
 } else {
     echo "<p>Nenhum produto disponível.</p>";

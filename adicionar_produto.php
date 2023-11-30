@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Processamento da imagem
     $imagem_nome = $_FILES["imagem"]["name"];
     $imagem_temp = $_FILES["imagem"]["tmp_name"];
-    $caminho_destino = "C:/xampp/htdocs/img/" . $imagem_nome; // Substitua pelo caminho correto
+    $caminho_destino = "img/" . $imagem_nome; // Substitua pelo caminho correto
 
     // Move a imagem para a pasta desejada
     if (move_uploaded_file($imagem_temp, $caminho_destino)) {
