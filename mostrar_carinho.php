@@ -21,7 +21,7 @@ if (isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0) {
 
     // Exibir a lista de produtos no carrinho
     echo "<ul>";
-    foreach ($_SESSION['carrinho'] as $produto) {
+    foreach ($_SESSION['carrinho'] as $index => $produto) {
         echo "<li>";
 
         // Verificar se a chave 'caminho_imagem' está definida no produto
@@ -36,7 +36,19 @@ if (isset($_SESSION['carrinho']) && count($_SESSION['carrinho']) > 0) {
         echo "ID: " . $produto['id'] . "<br>";
         echo "Nome: " . $produto['nome'] . "<br>";
         echo "Preço: " . $produto['preco'] . "<br>";
-        echo "Quantidade: " . $produto['quantidade'] . "<br>";
+        echo "Quantidade: " . $produto['quantidade'];
+
+        // Adicionar botões para remover e aumentar a quantidade
+        echo '<form action="atualizar_carrinho.php" method="post" style="display:inline-block;">
+                <input type="hidden" name="index" value="' . $index . '">
+                <button type="submit" name="action" value="remove" class="btn btn-danger btn-sm">Remover</button>
+             </form>';
+
+        echo '<form action="atualizar_carrinho.php" method="post" style="display:inline-block;">
+                <input type="hidden" name="index" value="' . $index . '">
+                <button type="submit" name="action" value="increase" class="btn btn-primary btn-sm">+</button>
+             </form>';
+
         echo "</li>";
     }
     echo "</ul>";
