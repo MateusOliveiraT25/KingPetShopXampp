@@ -1,18 +1,21 @@
 <?php
 session_start();
 
-// Verificar se os dados foram recebidos via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar os dados do produto
     $nome = $_POST['nome'];
     $id = $_POST['id'];
     $preco = $_POST['preco'];
+    
+    // Certifique-se de verificar se 'caminhoImagem' está definido
+    $caminhoImagem = isset($_POST['caminhoImagem']) ? $_POST['caminhoImagem'] : '';
 
     // Adicionar o produto ao carrinho
     $produto = array(
         'id' => $id,
         'nome' => $nome,
         'preco' => $preco,
+        'caminho_imagem' => $caminhoImagem, // Adicione o caminho da imagem
         'quantidade' => 1
     );
 

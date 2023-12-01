@@ -49,21 +49,26 @@
 $sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
 
+// Função para obter o HTML da imagem com verificação de existência
+function getImagemHTML($imagemNome) {
+    $caminho_imagem = "" . htmlspecialchars($imagemNome);
+
+    // Verifica se a imagem existe
+    if (file_exists($caminho_imagem)) {
+        return '<img src="' . $caminho_imagem . '" class="card-img-top product-image" alt="Imagem do Produto">';
+    } else {
+        // Se a imagem não existir, use uma imagem padrão ou exiba uma mensagem
+        return '<img src="caminho/imagem/padrao.jpg" class="card-img-top product-image" alt="Imagem Padrão">';
+        // ou return '<p>Imagem não disponível</p>';
+    }
+}
+
 // Exibir os produtos
 if ($result->num_rows > 0) {
     echo '<div class="row">';
     
     while ($row = $result->fetch_assoc()) {
-        $caminho_imagem = ""; . htmlspecialchars($row['imagem']);
-
-        // Verifica se a imagem existe
-        if (file_exists($caminho_imagem)) {
-            $imagem_html = '<img src="' . $caminho_imagem . '" class="card-img-top product-image" alt="Imagem do Produto">';
-        } else {
-            // Se a imagem não existir, use uma imagem padrão ou exiba uma mensagem
-            $imagem_html = '<img src="caminho/imagem/padrao.jpg" class="card-img-top product-image" alt="Imagem Padrão">';
-            // ou $imagem_html = '<p>Imagem não disponível</p>';
-        }
+        $imagem_html = getImagemHTML($row['imagem']);
 
         echo sprintf(
             '<div class="col-md-4">
@@ -92,6 +97,7 @@ if ($result->num_rows > 0) {
     echo "<p>Nenhum produto disponível.</p>";
 }
 
+
 // Fechar a conexão com o banco de dados
 $conn->close();
         ?>
@@ -99,20 +105,26 @@ $conn->close();
 
     <!-- Inclua este script na parte inferior da sua página de produtos -->
 <script>
-    function adicionarAoCarrinho(nome, id, preco) {
-        // Enviar solicitação AJAX para o servidor PHP
-        $.ajax({
-            type: "POST",
-            url: "adicionar_ao_carrinho.php", // Nomeie o arquivo PHP responsável por adicionar ao carrinho
-            data: {nome: nome, id: id, preco: preco},
-            success: function(response) {
-                alert(response); // Exibir uma mensagem de sucesso ou erro
-            },
-            error: function() {
-                alert("Erro ao adicionar ao carrinho");
-            }
-        });
-    }
+  function adicionarAoCarrinho(nome, id, preco, caminhoImagem) {
+    // Enviar solicitação AJAX para o servidor PHP
+    $.ajax({
+        type: "POST",
+        url: "adicionar_ao_carrinho.php",
+        data: {
+            nome: nome,
+            id: id,
+            preco: preco,
+            caminhoImagem: caminhoImagem
+        },
+        success: function(response) {
+            alert(response); // Exibir uma mensagem de sucesso ou erro
+        },
+        error: function() {
+            alert("Erro ao adicionar ao carrinho");
+        }
+    });
+}
+
 </script>
 
     <!-- Rodapé da Página -->
