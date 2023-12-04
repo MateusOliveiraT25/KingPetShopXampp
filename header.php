@@ -17,7 +17,7 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a href="produtos.html" class="nav-link active" aria-current="page">Produtos</a>
+            <a href="produtos.php" class="nav-link active" aria-current="page">Produtos</a>
             <ul class="submenu">
               <li><a href="racao.html">Ração</a></li>
               <li><a href="acessorios.html">Acessórios</a></li>
@@ -43,7 +43,7 @@ session_start();
           </li>
 
           <li class="nav-item">
-            <a href="carrinho.html" class="nav-link active">
+            <a href="mostrar_carinho.php" class="nav-link active">
               <i class="fas fa-shopping-cart fa-lg"></i> <!-- Ícone de carrinho -->
             </a>
          
