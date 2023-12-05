@@ -53,3 +53,12 @@ CREATE TABLE produtos (
     imagem VARCHAR(255), -- Assuming you'll store the image path or URL
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_produto INT,
+    quantidade INT,
+    -- Adicione outras colunas necessárias, como preço, nome do produto, etc.
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Substitua "usuarios" pelo nome da tabela de usuários
+);

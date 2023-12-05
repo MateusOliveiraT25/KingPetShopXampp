@@ -71,7 +71,7 @@
   </header>
   <br><br>  <br>
       <div class="container" style="padding: 1em;">
-        <h1 style="font-size: 2.5rem; color: #000000;">Pedido Confirmado</h1>
+        
         <div id="bloco-confirma" style="text-align: center;">
             <p style="font-size: 1.5rem; color: #000000; font-weight: 600;">Seu pedido foi realizado com sucesso.</p>
             <p><span style="color: #000000; font-size: 1.5rem;">Em breve você receberá um e-mail de confirmação <strong id="email"></strong> com todos os detalhes do pedido.</span></p>
@@ -80,10 +80,20 @@
     </div>
 
     <div class="container" style="padding: 1em;">
-        <div style="border-radius: .5rem; background: #00000075; padding: 2rem; border: 1px solid #000;">
-            <p style="font-size: 1.5rem; font-weight: 600;">Informações do Pedido</p>
-            <p id="confirma-info">Id: 0456</p>
-            <p>Total: </p>
+      <div style="border-radius: .5rem; background: #00000075; padding: 2rem; border: 1px solid #000;">
+          <p style="font-size: 1.5rem; font-weight: 600;">Informações do Pedido</p>
+
+          <?php
+          // Seu código PHP para obter as informações do pedido
+          $id_pedido = 0456; // Substitua isso com a lógica real para obter o ID do pedido
+          $total_pedido = 100.00; // Substitua isso com a lógica real para obter o total do pedido
+
+          echo "<p>Id: $id_pedido</p>";
+          echo "<p>Total: R$ " . number_format($total_pedido, 2) . "</p>";
+          ?>
+
+      </div>
+  </div>
         </div>
     </div>
 
