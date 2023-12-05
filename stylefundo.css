@@ -1,12 +1,12 @@
 .imgfundospet {
-    /* Substitua 'img/imgfundospet.png' pelo caminho real para a sua imagem de fundo */
     background-image: url('img/imgfundospet.png');
-    /* Ajuste as propriedades do plano de fundo para cobrir completamente o contêiner */
-    background-size: cover; /* ou background-size: 100% 100%; */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Adicione preenchimento ou outros estilos conforme necessário */
-    padding: 20px;
+    /* Adicione height: 100vh para cobrir a altura total da viewport */
+    height: 120vh;
+    /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
+    margin-bottom: 0; /* Ajuste conforme necessário */
 }
 
 #bodyServicosPet {

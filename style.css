@@ -458,3 +458,20 @@ footer {
     height: 200px; /* Ajuste conforme necessário */
     object-fit: cover;
 }
+.col-6 {
+    color: white;
+    font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold; /* Use negrito para destacar o texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adicione sombra para destacar do fundo */
+}
+
+/* Adicione estilos adicionais para os elementos de texto, se necessário */
+h1, p, label {
+    color: white;
+    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold; /* Use negrito para destacar o texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adicione sombra para destacar do fundo */
+}
+#bodyServicosPet p.text-center {
+    color: yellow; /* ou qualquer outra cor que contraste bem com o fundo */
+}
