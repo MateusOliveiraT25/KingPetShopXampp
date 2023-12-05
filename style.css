@@ -1,5 +1,6 @@
 
 body {
+    background-color: white; 
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -78,8 +79,7 @@ text-decoration:none;
 
 /* Estilos globais para o corpo do site */
 #bodyIndex {
-    background: rgb(0,140,218);
-    background: linear-gradient(90deg, rgba(0,140,218,0.3533788515406162) 0%, rgba(194,117,1,0.26094187675070024) 45%, rgba(0,98,153,0.29175420168067223) 100%);
+  background-color: white;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -89,7 +89,7 @@ text-decoration:none;
     font-family: Arial, sans-serif;
 }
   #bodyAgendamentodeServiço{
-background-color: rgb(153, 102, 204);
+background-color: white;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -227,7 +227,7 @@ padding: 0;
 /* Altera a cor do botão para preto com letras douradas */
 .btn.btn-primary {
   background-color: black; /* Cor de fundo preto */
-  color: gold; /* Cor do texto dourado */
+  color: whitesmoke; /* Cor do texto dourado */
 }
 
 /* Altera a cor do botão ao passar o mouse por cima */
