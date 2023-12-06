@@ -1,0 +1,50 @@
+
+Documento de Processo de Desenvolvimento e Decisões Tomadas
+
+1. Objetivo do Projeto:
+O objetivo principal do projeto é desenvolver um Sistema de Cadastro de Cachorros para uma loja de produtos e serviços para animais de estimação. Ao longo do desenvolvimento, foram feitas decisões estratégicas para melhorar a funcionalidade e a experiência do usuário.
+
+2. Metodologia de Desenvolvimento:
+O projeto foi desenvolvido seguindo a metodologia ágil, com iterações regulares para avaliação de progresso. Isso permitiu a adaptação contínua às necessidades do usuário e a incorporação de feedback ao longo do processo.
+
+3. Decisões de Arquitetura:
+
+3.1 Front-End:
+
+Utilização de HTML, CSS e JavaScript para a criação de páginas dinâmicas e responsivas.
+Integração da biblioteca Bootstrap para garantir uma experiência consistente em diferentes dispositivos.
+Estruturação do código em componentes reutilizáveis para facilitar a manutenção e escalabilidade.
+3.2 Back-End:
+
+Adoção de PHP para a lógica do servidor e interação com o banco de dados.
+Implementação de um banco de dados relacional para armazenar informações de clientes, cachorros, produtos e transações.
+Uso de práticas seguras, como o uso de instruções preparadas, para prevenir injeções SQL.
+4. Sistema de Login:
+
+Decidiu-se implementar um sistema de login para proporcionar uma experiência personalizada aos clientes.
+As credenciais do cliente são armazenadas de forma segura usando técnicas de hash para proteger a privacidade do usuário.
+5. Carrinho de Compras:
+
+A adição de um carrinho de compras foi uma decisão estratégica para facilitar a compra de múltiplos produtos de uma vez.
+O carrinho é persistente entre sessões para proporcionar conveniência ao usuário.
+
+6. Melhorias Contínuas:
+
+A equipe está comprometida com melhorias contínuas, considerando a implementação de recursos como notificações, avaliações e promoções exclusivas.
+7. Considerações de Segurança:
+
+As decisões de segurança incluem práticas robustas para proteção contra ameaças comuns, garantindo a confidencialidade e integridade dos dados do cliente.
+8. Próximos Passos:
+
+Os próximos passos incluem a implementação de recursos adicionais, otimizações de desempenho e aprimoramentos com base no feedback do usuário.
+9. Considerações Finais:
+. 
+O projeto foi desenvolvido com foco na simplicidade, usabilidade e responsividade. As tecnologias utilizadas foram escolhidas para acelerar o desenvolvimento e proporcionar uma experiência agradável ao usuário. O código foi estruturado de forma modular para facilitar manutenção e expansões futuras.
+
+10. Equipe de Desenvolvimento:
+Nome do Desenvolvedor 1
+Nome do Desenvolvedor 2
+Nome do Desenvolvedor 3
+11. Data de Conclusão:
+DD/MM/AAAA
+
