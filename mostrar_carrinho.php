@@ -107,7 +107,7 @@ session_start();
         $total = 0;
 
         // Display the list of products in the cart
-        foreach ($_SESSION['carrinho'] as $produto) {
+        foreach ($_SESSION['carrinho'] as $index => $produto) {
             echo "<li>";
             if (isset($produto['caminho_imagem'])) {
                 echo getImagemHTML($produto['caminho_imagem']);
@@ -124,6 +124,9 @@ session_start();
             echo "<p>Quantidade: " . $produto['quantidade'] . "</p>";
             echo "</div>";
 
+            // Adicione um link para remover o produto
+            echo '<a href="remover_produto.php?index=' . $index . '">Remover</a>';
+
             echo "</li>";
         }
 
@@ -139,7 +142,7 @@ session_start();
         // Add a link to proceed to checkout with the "btn-danger" class and float it to the right
         echo '<a href="checkout.php" class="btn btn-danger">Concluir Pedido</a>';
         echo '</div>';
-    } else  {
+    } else {
         echo "<p class='empty-cart-message'>O seu carrinho está vazio.</p>";
     }
     ?>
