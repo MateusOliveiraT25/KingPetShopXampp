@@ -8,9 +8,7 @@ session_start();
       <button class="navbar-brand home-button" onclick="window.location.href='index.html'">
         <img src="img/LogoPreto-removebg-preview.png" alt="Logo" width="70vh">
       </button>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +26,7 @@ session_start();
           </li>
           <li class="nav-login">
             <a href="cadastro.html" class="nav-link active">Cadastro</a>
-          
+
 
           <li class="nav-item">
             <a href="sobre_nos.html" class="nav-link active" aria-current="page">Sobre Nós</a>
@@ -47,18 +45,18 @@ session_start();
           <?php
           if (isset($_SESSION["usuario_id"])) {
             $usuario_email = isset($_SESSION["usuario_email"]) ? $_SESSION["usuario_email"] : "";
-            ?>
+          ?>
             <li class="nav-item"><a href="minha_conta.html" class="nav-link"><i class="fa fa-user"></i> Minha Conta</a></li>
             <li class="nav-item"><a href="meus_pedidos.html" class="nav-link"><i class="fa fa-list"></i> Meus Pedidos</a></li>
             <li class="nav-item"><a href="logout.php" class="nav-link"><i class="fa fa-sign-out"></i> Sair</a></li>
-            <?php
+          <?php
           } else {
-            ?>
+          ?>
             <li class="nav-item"><a href="login.html" class="nav-link"><i class="fa fa-sign-in"></i> Login</a></li>
-            <?php
+          <?php
           }
           ?>
-         
+
           <div class="search-form">
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -72,7 +70,4 @@ session_start();
 </header>
 <!-- Adicionando um elemento para o menu dinâmico -->
 <div id="menu-container"></div>
-</div>
-</nav>
-</header>
 <script src="logado.js"></script>
