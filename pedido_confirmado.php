@@ -36,7 +36,7 @@ if (isset($_GET['carrinho'])) {
 
         // Itera sobre os produtos no carrinho
         foreach ($carrinho_info as $produto) {
-            echo "<p>ID do Produto: " . $produto['id'] . "</p>";
+           
             echo "<p>Nome do Produto: " . $produto['nome'] . "</p>";
             echo "<p>Preço Unitário: R$ " . $produto['preco'] . "</p>";
             echo "<p>Quantidade: " . $produto['quantidade'] . "</p>";
