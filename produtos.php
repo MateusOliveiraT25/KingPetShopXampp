@@ -19,19 +19,22 @@
             height: auto; /* Mantém a proporção original da imagem */
         }
     </style>
+    <script>
+  // Use jQuery para carregar o cabeçalho em todas as páginas
+  $(function () {
+    $("#header").load("header.php");
+  });
+  $(function () {
+        $("#footer").load("footer.html");
+      });
+</script>
 </head>
 <body>
     
 
     <!-- Navegação -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="login.html">Login</a></li>
-            <!-- Adicione mais links conforme necessário -->
-        </ul>
-    </nav>
+    <div id="header"></div>
+    <br>
 
     <!-- Conteúdo da Página -->
     <div class="container">
@@ -133,9 +136,11 @@ $conn->close();
         }
     });
 }
-
 </script>
 
+<br><br>
+
+<div id="footer"></div>
 </body>
 
 </html>
