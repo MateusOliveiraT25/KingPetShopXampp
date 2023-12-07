@@ -4,7 +4,7 @@
     background-position: center;
     background-repeat: no-repeat;
     /* Adicione height: 100vh para cobrir a altura total da viewport */
-    height: 120vh;
+    height: 100vh;
     /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
     margin-bottom: 0; /* Ajuste conforme necessário */
 }
