@@ -11,17 +11,23 @@
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      // Use jQuery para carregar o cabeçalho em todas as páginas
+      $(function () {
+        $("#header").load("header.php");
+      });
+      $(function () {
+        $("#footer").load("footer.html");
+      });
+    </script>
 </head>
 <body>
 
     <!-- Navegação -->
     <nav>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="login.html">Login</a></li>
-            <!-- Adicione mais links conforme necessário -->
-        </ul>
+         <!-- header -->
+    <div id="header"></div>
     </nav>
 
     <!-- Conteúdo da Página -->
@@ -128,9 +134,6 @@ $conn->close();
 </script>
 
     <!-- Rodapé da Página -->
-    <footer>
-        <p>&copy; 2023 King Pet Shop</p>
-    </footer>
-
+    <div id="footer"></div>
 </body>
 </html>
