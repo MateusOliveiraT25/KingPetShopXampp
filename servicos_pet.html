@@ -55,7 +55,7 @@
                 <div class="col-6">
                     <h1 class="text-center">Escolha um Serviço</h1>
                     <p class="text-center">Por favor, selecione o serviço desejado para o seu pet:</p>
-                    <form action="http://localhost/KingPetShopXampp/agendar_servico.php" method="POST">
+                    <form action="cadastro_pet.html" method="POST">
                         <div class="form-group">
                             <label for="servico">Selecione o Serviço:</label>
                             <select id="servico" name="servico" required class="form-control">
@@ -71,21 +71,10 @@
                                 </option>
                             </select>
                         </div>
-                        <!-- Pergunta se o cachorro tem cadastro -->
-                        <div class="form-group">
-                            <label for="temCadastro">Seu cachorro tem cadastro?</label>
-                            <div class="form-check">
-                                <input type="radio" id="temCadastroSim" name="temCadastro" value="sim" class="form-check-input" required>
-                                <label for="temCadastroSim" class="form-check-label">Sim</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" id="temCadastroNao" name="temCadastro" value="nao" class="form-check-input" required>
-                                <label for="temCadastroNao" class="form-check-label">Não</label>
-                            </div>
-                        </div>
+                        
                         <button type="submit" class="btn btn-primary btn-block btn-lg" id="boot" style="width: 30%;">Agendar Serviço</button>
                     </form>
-                    <p class="text-center mt-3">Se o seu cachorro não tem cadastro, <a href="cadastro_pet.html">clique aqui para cadastrá-lo</a>.</p>
+                   
                 </div>
             </div>
         </div>

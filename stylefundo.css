@@ -1,3 +1,4 @@
+/*serviço pet*/
 .imgfundospet {
     background-image: url('img/imgfundospet.png');
     background-size: cover;
@@ -13,3 +14,21 @@
     /* Estilos adicionais para o body, se necessário */
     margin: 0;
 }
+
+
+/* cadastro_pet.css */
+.imgfundocadastropet {
+        background-image: url('img/imgfundocadastropet.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        /* Adicione height: 100vh para cobrir a altura total da viewport */
+        height: 120vh;
+        /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
+        margin-bottom: 0; /* Ajuste conforme necessário */
+    }
+
+    #bodyCadastroPet {
+        /* Estilos adicionais para o body, se necessário */
+        margin: 0;
+    }
