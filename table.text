@@ -1,13 +1,19 @@
-CREATE TABLE usuarios (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+
+
+CREATE TABLE usuarios_adm (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    endereco VARCHAR(255),
-    cep VARCHAR(10),
-    estado VARCHAR(100),
-    cidade VARCHAR(100)
+    cep VARCHAR(8) NOT NULL,
+    logradouro VARCHAR(255),
+    numero VARCHAR(10),
+    complemento VARCHAR(255),
+    bairro VARCHAR(255),
+    estado VARCHAR(2),
+    cidade VARCHAR(255)
 );
-
+//usarioADM
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -64,4 +70,13 @@ CREATE TABLE IF NOT EXISTS usuarios_adm (
     cep VARCHAR(10),
     estado VARCHAR(50),
     cidade VARCHAR(100)
+);
+
+CREATE TABLE carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_produto INT,
+    quantidade INT,
+    -- Adicione outras colunas necessárias, como preço, nome do produto, etc.
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Substitua "usuarios" pelo nome da tabela de usuários
 );

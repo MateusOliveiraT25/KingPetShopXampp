@@ -37,3 +37,25 @@ foreach ($produtos as $produto) {
         </div>';
 }
 ?>
+<script>
+  function adicionarAoCarrinho(nome, id, preco, caminhoImagem) {
+    // Enviar solicitação AJAX para o servidor PHP
+    $.ajax({
+        type: "POST",
+        url: "adicionar_ao_carrinho.php",
+        data: {
+            nome: nome,
+            id: id,
+            preco: preco,
+            caminhoImagem: caminhoImagem
+        },
+        success: function(response) {
+            alert(response); // Exibir uma mensagem de sucesso ou erro
+        },
+        error: function() {
+            alert("Erro ao adicionar ao carrinho");
+        }
+    });
+}
+
+</script>

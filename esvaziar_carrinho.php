@@ -5,6 +5,6 @@ session_start();
 $_SESSION['carrinho'] = array();
 
 // Redirecionar de volta para a página do carrinho ou qualquer outra página desejada
-header("Location: mostrar_carinho.php");
+header("Location: mostrar_carrinho.php");
 exit;
 ?>

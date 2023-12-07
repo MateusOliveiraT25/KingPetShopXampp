@@ -36,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verifica se a inserção foi bem-sucedida
         if ($stmt->execute()) {
             echo "Produto adicionado com sucesso!";
+            
+            // Redireciona para produtos.php
+            header("Location: produtos.php");
+            exit(); // Certifique-se de parar a execução do script após o redirecionamento
         } else {
             echo "Erro ao adicionar produto: " . $stmt->error;
         }
