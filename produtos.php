@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="herder_footer.js"></script> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
         /* Defina o tamanho fixo para as imagens dos produtos */
         .product-image {
@@ -20,21 +20,22 @@
         }
     </style>
     <script>
-  // Use jQuery para carregar o cabeçalho em todas as páginas
-  $(function () {
-    $("#header").load("header.php");
-  });
-  $(function () {
+      // Use jQuery para carregar o cabeçalho em todas as páginas
+      $(function () {
+        $("#header").load("header.php");
+      });
+      $(function () {
         $("#footer").load("footer.html");
       });
-</script>
+    </script>
 </head>
 <body>
-    
 
     <!-- Navegação -->
+    <nav>
+         <!-- header -->
     <div id="header"></div>
-    <br>
+    </nav>
 
     <!-- Conteúdo da Página -->
     <div class="container">
@@ -136,11 +137,10 @@ $conn->close();
         }
     });
 }
+
 </script>
 
-<br><br>
-
-<div id="footer"></div>
+    <!-- Rodapé da Página -->
+    <div id="footer"></div>
 </body>
-
 </html>
