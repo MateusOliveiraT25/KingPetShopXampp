@@ -84,7 +84,7 @@ session_start();
 </head>
 
 <body>
-    
+
 
     <?php
     // Function to get HTML for the image with existence check
@@ -126,7 +126,7 @@ session_start();
             echo "</div>";
 
             // Adicione um link para remover o produto
-            echo '<a href="remover_produto.php?index=' . $index . '">Remover</a>';
+            echo '<a href="remover_produto2.php?index=' . $index . '">Remover</a>';
 
             echo "</li>";
         }
