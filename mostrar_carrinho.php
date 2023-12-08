@@ -84,6 +84,7 @@ session_start();
 </head>
 
 <body>
+    
 
     <?php
     // Function to get HTML for the image with existence check
