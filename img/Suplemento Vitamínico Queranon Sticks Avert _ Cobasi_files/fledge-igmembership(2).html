@@ -1,0 +1,26 @@
+
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<script>
+    if (navigator.joinAdInterestGroup) {
+        const addIgScript = document.createElement('script');
+        let src = null;
+        if (navigator.runAdAuction) {
+            if (window.FencedFrameConfig || 'src' in document.createElement('fencedframe')) {
+                src = 'https://us.creativecdn.com/fledge-igmembership?ntk=gPv_QseQYtSpVj-lx6HztY28K0fDsvwCgX6TMe58ivfjpUu5uQauBHXEivgtCVPKasZf_EewQiVpjNoYnHMw7A';
+            } else {
+                src = 'https://us.creativecdn.com/fledge-igmembership?ntk=gPv_QseQYtSpVj-lx6HztY28K0fDsvwCgX6TMe58ivfjpUu5uQauBHXEivgtCVPKgvTyDDKEjcjMCTVthcjanA';
+            }
+        } else {
+            if (window.FencedFrameConfig || 'src' in document.createElement('fencedframe')) {
+                src = 'https://us.creativecdn.com/fledge-igmembership?ntk=gPv_QseQYtSpVj-lx6HztY28K0fDsvwCgX6TMe58ivfjpUu5uQauBHXEivgtCVPKB8jRjErDZnPT4KH-k9Espg';
+            } else {
+                src = 'https://us.creativecdn.com/fledge-igmembership?ntk=gPv_QseQYtSpVj-lx6HztY28K0fDsvwCgX6TMe58ivfjpUu5uQauBHXEivgtCVPKsfa7A4MZEWD4nRH4kzMbCg';
+            }
+        }
+        addIgScript.setAttribute('src', src);
+        document.body.appendChild(addIgScript);
+    }
+</script><script src="./fledge-igmembership"></script>
+
+</body></html>
