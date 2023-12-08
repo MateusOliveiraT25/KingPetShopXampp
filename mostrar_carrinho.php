@@ -126,7 +126,7 @@ session_start();
             echo "</div>";
 
             // Adicione um link para remover o produto
-            echo '<a href="remover_produto2.php?index=' . $index . '">Remover</a>';
+            echo '<a href="remover_carrinho.php?index=' . $index . '">Remover</a>';
 
             echo "</li>";
         }

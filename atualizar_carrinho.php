@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             // Redirecionar de volta para a página do carrinho
-            header("Location: mostrar_carinho.php");
+            header("Location: mostrar_carrinho.php");
             exit();
         }
     }
