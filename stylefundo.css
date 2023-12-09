@@ -1,53 +1,48 @@
+/* Aplica ajustes de filtro apenas às imagens de fundo */
+.imgfundospet,
+.imgfundocadastropet,
+.imgfundoagendamento {
+    filter: contrast(80%) brightness(80%) saturate(80%);
+}
+
 /*serviço pet*/
 .imgfundospet {
-    background-color: rgba(255, 255, 255, 0.7); /* Cor branca com 70% de opacidade */
     background-image: url('img/imgfundospet.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Adicione height: 100vh para cobrir a altura total da viewport */
     height: 120vh;
-    /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
-    margin-bottom: 0; /* Ajuste conforme necessário */
+    margin-bottom: 0;
 }
 
 #bodyServicosPet {
-    /* Estilos adicionais para o body, se necessário */
     margin: 0;
 }
 
 /* cadastro_pet.css */
 .imgfundocadastropet {
-    background-color: rgba(255, 255, 255, 0.7); /* Cor branca com 70% de opacidade */
     background-image: url('img/imgfundocadastropet.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Adicione height: 100vh para cobrir a altura total da viewport */
     height: 120vh;
-    /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
-    margin-bottom: 0; /* Ajuste conforme necessário */
+    margin-bottom: 0;
 }
 
 #bodyCadastroPet {
-    /* Estilos adicionais para o body, se necessário */
     margin: 0;
 }
 
 /* agendamento.css */
 .imgfundoagendamento {
-    background-color: rgba(255, 255, 255, 0.7); /* Cor branca com 70% de opacidade */
     background-image: url('img/imgfundoagendamento.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Adicione height: 100vh para cobrir a altura total da viewport */
     height: 120vh;
-    /* Adicione margin-bottom para garantir que a imagem se estenda até o footer */
-    margin-bottom: 0; /* Ajuste conforme necessário */
+    margin-bottom: 0;
 }
 
 #bodyAgendamentoServico {
-    /* Estilos adicionais para o body, se necessário */
     margin: 0;
 }
