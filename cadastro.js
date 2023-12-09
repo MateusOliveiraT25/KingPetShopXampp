@@ -1,36 +1,28 @@
 // cadastro.js
 
-// Função para validar o formulário de cadastro
-function validarFormularioCadastro() {
-    var email = document.getElementById("email").value;
-    var confirmEmail = document.getElementById("confirmEmail").value;
-    var senha = document.getElementById("senha").value;
-    var confirmSenha = document.getElementById("confirmSenha").value;
-    var endereco = document.getElementById("endereco").value;
-    var cep = document.getElementById("cep").value;
-    var estado = document.getElementById("estado").value;
-    var cidade = document.getElementById("cidade").value;
+function enviar() {
+    // Verifica se os campos obrigatórios estão preenchidos
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+    var confirmSenha = document.getElementById('confirmSenha').value;
+    var cep = document.getElementById('cep').value;
+    var estado = document.getElementById('estado').value;
+    var cidade = document.getElementById('cidade').value;
 
-    if (email === "" || confirmEmail === "" || senha === "" || confirmSenha === "" || endereco === "" || cep === "" || estado === "" || cidade === "") {
-        alert("Por favor, preencha todos os campos obrigatórios.");
-        return false;
+    if (nome === '' || email === '' || senha === '' || confirmSenha === '' || cep === '' || estado === '' || cidade === '') {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return false; // Impede o envio do formulário
     }
 
-    if (email !== confirmEmail) {
-        alert("Os campos de email e confirmar email devem corresponder.");
-        return false;
-    }
+    // Adicione mais verificações conforme necessário
 
-    if (senha !== confirmSenha) {
-        alert("Os campos de senha e confirmar senha devem corresponder.");
-        return false;
-    }
-
-    return true;
+    return true; // Permite o envio do formulário se todos os campos estiverem preenchidos
 }
 
+
 // Event listener para o envio do formulário de cadastro
-var formularioCadastro = document.getElementById("formularioCadastro");
+var formularioCadastro = document.getElementById("cadastroForm");
 if (formularioCadastro) {
     formularioCadastro.addEventListener("submit", function (e) {
         if (!validarFormularioCadastro()) {
@@ -38,3 +30,26 @@ if (formularioCadastro) {
         }
     });
 }
+
+// Função para validar campos obrigatórios no formulário de consulta de CEP
+function enviar() {
+    // Verifica se os campos obrigatórios estão preenchidos
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+    var confirmSenha = document.getElementById('confirmSenha').value;
+    var cep = document.getElementById('cep').value;
+    var estado = document.getElementById('estado').value;
+    var cidade = document.getElementById('cidade').value;
+
+    if (nome === '' || email === '' || senha === '' || confirmSenha === '' || cep === '' || estado === '' || cidade === '') {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return false; // Impede o envio do formulário
+    }
+
+    // Adicione mais verificações conforme necessário
+
+    return true; // Permite o envio do formulário se todos os campos estiverem preenchidos
+}
+
+
