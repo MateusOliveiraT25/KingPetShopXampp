@@ -1,4 +1,29 @@
 
+
+
+/* Estilo para os links no rodapé */
+footer a {
+    color: white; /* Define a cor padrão */
+    transition: color 0.3s; /* Adiciona transição para um efeito suave */
+  }
+
+  /* Altera a cor ao passar o mouse */
+  footer a:hover {
+    color: gold;
+  }
+
+
+  /* Estilo para os links de navegação */
+  .navbar-nav .nav-item a.nav-link{
+    color: white; /* Define a cor padrão */
+    transition: color 0.3s; /* Adiciona transição para um efeito suave */
+  }
+
+  /* Altera a cor ao passar o mouse */
+  .navbar-nav .nav-item a.nav-link:hover {
+    color: gold;
+  }
+ 
 body {
     margin: 0;
     padding: 0;
