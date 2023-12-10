@@ -7,7 +7,7 @@
     <script>
       // Use jQuery para carregar o cabeçalho em todas as páginas
       $(function () {
-        $("#header").load("header.html");
+        $("#header").load("header.php");
       });
 
       // Função para redirecionar para a página index após 3 segundos
