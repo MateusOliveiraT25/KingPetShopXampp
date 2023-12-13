@@ -2,7 +2,8 @@
 .imgfundospet,
 .imgfundocadastropet,
 .imgfundoagendamento {
-    filter: contrast(80%) brightness(80%) saturate(80%);
+    filter: contrast(100%) brightness(90%) saturate(100%);
+
 }
 
 /*serviço pet*/
@@ -45,4 +46,29 @@
 
 #bodyAgendamentoServico {
     margin: 0;
+}
+/* Estilos para intensificar as cores */
+.col-6 {
+    color: #ffffff; /* Branco */
+}
+
+/* Adicione estilos adicionais para os elementos de texto, se necessário */
+h1, p, label {
+    color: #ffffff; /* Branco */
+}
+
+#bodyServicosPet p.text-center a {
+    color: #ffff00; /* Amarelo */
+    /* Cor do texto do link */
+    text-decoration: none;
+    /* Remove o sublinhado padrão */
+}
+
+#bodyServicosPet p.text-center a:hover {
+    text-decoration: underline;
+    /* Adiciona sublinhado ao passar o mouse sobre o link */
+}
+h1, p, label {
+    color: #ffffff; /* Branco */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10); /* Ajustar o desfoque */
 }
