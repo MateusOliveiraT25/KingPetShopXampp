@@ -34,7 +34,7 @@
             <!-- ... (seu código existente) -->
         <div class="row">
             <div class="offset-4 col"><h1>CRIE SUA CONTA</h1></div>
-            <div class="offset-5 col-sm-6 offset-1"><img src="img/OIG.jpg" height="100px" width="20%" alt=""></div>
+            <div class="offset-5 col-sm-6 offset-1"><img src="img/OIG.jfif" height="100px" width="20%" alt=""></div>
         </div>
       <div class="row">
             <div class="offset-3 col-sm-6 offset-3">
@@ -72,7 +72,7 @@
         <button type="button" class="btn btn-primary" onclick="consultarCEP()">Consultar</button>
 
         <!-- Resultado da consulta -->
-        <div id="resultadoCEP">
+        
             <div class="mb-3">
                 <label for="logradouro" class="form-label">Logradouro</label>
                 <input type="text" class="form-control" id="logradouro" name="logradouro" >
@@ -88,26 +88,25 @@
             <div class="mb-3">
                 <label for="bairro" class="form-label">Bairro</label>
                 <input type="text" class="form-control" id="bairro" name="bairro" >
+        
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <select class="form-select" id="estado" name="estado" onchange="carregarCidades()">
+                    <option value="" selected disabled>Selecione o Estado</option>
+                    <!-- Adicione todos os estados aqui -->
+                </select>
+            </div>
+        
+            <div class="mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <select class="form-select" id="cidade" name="cidade"></select>
             </div>
         </div>
-    </div>
-</div>
+            </div>
+        </div>
         
-
-
-<div class="row">
-    <div class="offset-3 col-sm-6 offset-3">
-        <label for="cidade" class="form-label">Cidade</label>
-        <input type="text" class="form-control" id="cidade"  name="cidade">
-         
-    </div>
-</div>
-       
-        <div class="row">
-            <div class="offset-3 col-sm-6 offset-3">
-                <label for="estado" class="form-label">Estado</label>
-                <input type="text" class="form-control" id="estado"  name="estado">
-                
+          
             </div>
         </div>
        <br><br>
@@ -119,16 +118,47 @@
                 <a href="login.html"><span class="cadastro"  style="color: #000000; display: block; text-align: center; margin-top: 10px;" >LOGIN</a></span>
             </div>
         </div>
-
+    </div>
         <br><br><br><br><br>
     </form>
 </div>
-
+</div>
 <!-- FOOTER -->
 
 <div id="footer"></div>
-    
-    
+<script>
+// Função para carregar a lista de estados
+function carregarEstados() {
+    $.getJSON('https://servicodados.ibge.gov.br/api/v1/localidades/estados', function (estados) {
+        var options = '<option value="" selected disabled>Selecione o Estado</option>';
+        estados.forEach(function (estado) {
+            options += '<option value="' + estado.sigla + '">' + estado.nome + '</option>';
+        });
+        $('#estado').html(options);
+    });
+}
+
+// Função para carregar a lista de cidades com base no estado selecionado
+function carregarCidades() {
+    var estadoSelecionado = $('#estado').val();
+    if (estadoSelecionado) {
+        $.getJSON('https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + estadoSelecionado + '/municipios', function (cidades) {
+            var options = '<option value="" selected disabled>Selecione a Cidade</option>';
+            cidades.forEach(function (cidade) {
+                options += '<option value="' + cidade.nome + '">' + cidade.nome + '</option>';
+            });
+            $('#cidade').html(options);
+        });
+    } else {
+        $('#cidade').html('<option value="" selected disabled>Selecione o Estado primeiro</option>');
+    }
+}
+
+// Carregar os estados quando a página carregar
+$(document).ready(function () {
+    carregarEstados();
+});
+</script>
 </body>
 </html>
 
