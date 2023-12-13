@@ -1,5 +1,36 @@
 
+  /* Estilos para os botões */
+  #mesage {
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 15px 25px; /* Espaçamento interno (ajuste conforme necessário) */
+    background-color: #87CEEB; /* Cor de fundo (um tom mais claro de azul) */
+    color: #FFFFFF; /* Cor do texto (branco) */
+    border: none; /* Remover borda */
+  }
 
+  #mesage{
+    font-size: 18px;
+    padding: 15px 25px;
+    background-color: #fafffa; /* Cor de fundo (um tom mais claro de verde) */
+    color: #000000; /* Cor do texto (preto) */
+    border: none;
+  }
+
+
+
+
+/* Estilo para garantir que os botões de modal estejam na mesma linha */
+.cardM .col {
+    display: inline-block;
+    margin-right: 10px; /* Ajuste conforme necessário */
+  }
+  .cardM{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  
 
 /* Estilo para os links no rodapé */
 footer a {
