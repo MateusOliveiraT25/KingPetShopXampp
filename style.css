@@ -512,7 +512,7 @@ footer {
   }
 .product-image {
     height: 200px; /* Ajuste conforme necessário */
-    object-fit: cover;
+    object-fit: c;
 }
 
 
