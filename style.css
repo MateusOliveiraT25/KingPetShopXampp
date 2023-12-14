@@ -161,9 +161,11 @@ background-color: rgb(153, 102, 204);
     width: 100%;
     text-align: center;
 
+}#bodyAcessibilidade{
+  background: linear-gradient(135deg, #75a4b5, #c4b3a2, #8eb16a);
 }
     #bodyCadastroPet{
-        background: linear-gradient(135deg, #99ccff, #ffcc99, #ccff99);
+        background: linear-gradient(135deg, #99ccff, #b48f6b, #8eb16a);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
