@@ -258,7 +258,7 @@ background: linear-gradient(90deg, rgba(112,94,11,0.30575980392156865) 0%, rgba(
     padding: 0
  }#bodySobreNos {
     background: rgb(255,215,0);
-    background: radial-gradient(circle, rgba(255,215,0,0) 0%, rgba(1,1,1,0.4822303921568627) 100%);
+    background: radial-gradient(circle, rgba(180, 173, 139, 0) 0%, rgba(106, 101, 68, 0.482) 100%);
     margin: 0;
     padding: 0
 
