@@ -1,5 +1,36 @@
 
+  /* Estilos para os botões */
+  #mesage {
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 15px 25px; /* Espaçamento interno (ajuste conforme necessário) */
+    background-color: #87CEEB; /* Cor de fundo (um tom mais claro de azul) */
+    color: #FFFFFF; /* Cor do texto (branco) */
+    border: none; /* Remover borda */
+  }
 
+  #mesage{
+    font-size: 18px;
+    padding: 15px 25px;
+    background-color: #fafffa; /* Cor de fundo (um tom mais claro de verde) */
+    color: #000000; /* Cor do texto (preto) */
+    border: none;
+  }
+
+
+
+
+/* Estilo para garantir que os botões de modal estejam na mesma linha */
+.cardM .col {
+    display: inline-block;
+    margin-right: 10px; /* Ajuste conforme necessário */
+  }
+  .cardM{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  
 
 /* Estilo para os links no rodapé */
 footer a {
@@ -103,7 +134,7 @@ text-decoration:none;
 
 /* Estilos globais para o corpo do site */
 #bodyIndex {
-    background: rgb(0,140,218);
+    background: rgb(85, 101, 109);
     background: linear-gradient(90deg, rgba(0,140,218,0.3533788515406162) 0%, rgba(194,117,1,0.26094187675070024) 45%, rgba(0,98,153,0.29175420168067223) 100%);
     margin: 0;
     padding: 0;
@@ -130,9 +161,11 @@ background-color: rgb(153, 102, 204);
     width: 100%;
     text-align: center;
 
+}#bodyAcessibilidade{
+  background: linear-gradient(135deg, #75a4b5, #c4b3a2, #8eb16a);
 }
     #bodyCadastroPet{
-        background: linear-gradient(135deg, #99ccff, #ffcc99, #ccff99);
+        background: linear-gradient(135deg, #99ccff, #b48f6b, #8eb16a);
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -183,7 +216,7 @@ background-color: rgb(153, 102, 204);
     margin: 0;
     padding: 0}
 #bodyClubedeMembros {
-    background-color: rgb(24, 208, 162);
+    background-color: rgb(184, 180, 130);
     margin: 0;
     padding: 0
 }#bodyPedidos {
@@ -192,8 +225,7 @@ background: radial-gradient(circle, rgba(0,0,0,0.5158438375350141) 0%, rgba(113,
     margin: 0;
     padding: 0
 }#bodyEticaseConduta {
-    background: rgb(51, 47, 22);
-    background: radial-gradient(circle, rgba(29, 28, 23, 0) 0%, rgba(1,1,1,0.4822303921568627) 100%);
+  background: linear-gradient(135deg, #75a4b5, #c4b3a2, #8eb16a);
     margin: 0;
     padding: 0
     
@@ -226,7 +258,7 @@ background: linear-gradient(90deg, rgba(112,94,11,0.30575980392156865) 0%, rgba(
     padding: 0
  }#bodySobreNos {
     background: rgb(255,215,0);
-    background: radial-gradient(circle, rgba(255,215,0,0) 0%, rgba(1,1,1,0.4822303921568627) 100%);
+    background: radial-gradient(circle, rgba(180, 173, 139, 0) 0%, rgba(106, 101, 68, 0.482) 100%);
     margin: 0;
     padding: 0
 

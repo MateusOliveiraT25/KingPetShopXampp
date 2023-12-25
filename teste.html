@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de CEP</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <label for="cep">CEP:</label>
+    <input type="text" id="cepInput" />
+    <button onclick="consultarCEP()">Consultar</button>
+
+    <div id="resultadoCEP">
+      <div>
+        <label for="logradouro">Logradouro:</label>
+        <span id="logradouro"></span>
+      </div>
+      <div>
+        <label for="bairro">Bairro:</label>
+        <span id="bairro"></span>
+      </div>
+      <div>
+        <label for="complemento">Complemento:</label>
+        <span id="complemento"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function consultarCEP() {
+      const cep = document.getElementById('cepInput').value;
+      const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+      $.get(url, function(data) {
+        if (data.erro) {
+          alert('CEP não encontrado');
+        } else {
+          exibirResultadoCEP(data);
+        }
+      });
+    }
+
+    function exibirResultadoCEP(data) {
+      document.getElementById('logradouro').textContent = data.logradouro;
+      document.getElementById('bairro').textContent = data.bairro;
+      document.getElementById('complemento').textContent = data.complemento;
+    }
+  </script>
+
+</body>
+</html>

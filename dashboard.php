@@ -4,6 +4,19 @@
     <!-- Meta tags e links para estilos e scripts -->
     <!-- ... (mantenha os mesmos links que você já tem) -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <!-- Adicione seus estilos aqui -->
+      <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #28a745;
+        }
+    </style>
     <script>
       // Use jQuery para carregar o cabeçalho em todas as páginas
       $(function () {
