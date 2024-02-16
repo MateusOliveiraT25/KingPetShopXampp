@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($loginSenha, $row["senha"])) {
                 // Autenticação bem-sucedida
                 $_SESSION["usuario_id"] = $row["id"];
-                header("Location: http://localhost/KingPetShopXampp/dashboard.php"); // Redirecionar para a página de dashboard ou outra página após o login
+                header("Location: dashboard.php"); // Redirecionar para a página de dashboard ou outra página após o login
                 exit();
             } else {
                 echo "Credenciais incorretas. Tente novamente.";

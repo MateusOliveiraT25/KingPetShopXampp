@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Cadastro bem-sucedido. Redirecione para a página de login.
-        header("Location: http://localhost/KingPetShopXampp/login.html");
+        header("Location: login.html");
         exit();
     } else {
         echo "Erro no cadastro. Por favor, tente novamente mais tarde.";
