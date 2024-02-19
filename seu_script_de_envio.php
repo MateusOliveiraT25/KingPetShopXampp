@@ -1,5 +1,4 @@
 <?php
-
 // Conexão com o banco de dados (substitua as credenciais com as suas)
 $servername = "localhost";
 $username = "root";
@@ -15,26 +14,29 @@ if ($conn->connect_error) {
 
 // Processamento dos dados do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verificar se todos os campos obrigatórios estão presentes
-    $camposObrigatorios = ["nome", "email", "senha", "logradouro", "numero", "bairro", "cep", "estado", "cidade"];
+    // Validar os dados do formulário (substitua com validações específicas)
+     $nome = $_POST["nome"];
+    $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
+    $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT); // Recomendado armazenar senhas de forma segura
+    $logradouro = $_POST["logradouro"];
+    $numero = $_POST["numero"];
+    $complemento = $_POST["complemento"];
+    $bairro = $_POST["bairro"];
+    $cep = $_POST["cep"];
+    $estado = $_POST["estado"];
+    $cidade = $_POST["cidade"];
 
-    foreach ($camposObrigatorios as $campo) {
-        if (!isset($_POST[$campo]) || empty($_POST[$campo])) {
-            echo "Por favor, preencha todos os campos obrigatórios.";
-            exit();
-        }
+    // Verificar se a validação foi bem-sucedida
+    if ($email === false) {
+        echo "Email inválido. Por favor, forneça um email válido.";
+        exit();
     }
-
-    // Validar o e-mail se estiver presente
-    if (isset($_POST["email"])) {
-        $email = filter_var($_POST["email"], FILTER_VALIDATE_EMAIL);
-
-        // Verificar se a validação foi bem-sucedida
-        if ($email === false) {
-            echo "Email inválido. Por favor, forneça um email válido.";
-            exit();
-        }
-    }
+      /*  // Verificar se a validação foi bem-sucedida
+    if (empty($nomeCompleto) || empty($email) || empty($senha) || empty($cep) || empty($estado) || empty($cidade)) {
+        $_SESSION["error_message"] = "Por favor, preencha todos os campos obrigatórios.";
+        header("Location: http://localhost/KingPetShopXampp/registro.html");
+        exit();
+    }*/
 
     // Inserir os dados no banco de dados usando uma consulta preparada
     $sql = "INSERT INTO usuarios (email, senha, logradouro, numero, complemento, bairro, cep, estado, cidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -44,22 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro na preparação da consulta: " . $conn->error);
     }
 
-    // Bind dos parâmetros
-    $email = $_POST["email"];
-    $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT);
-    $logradouro = $_POST["logradouro"];
-    $numero = $_POST["numero"];
-    $complemento = $_POST["complemento"] ?? ""; // Adicionado o operador de coalescência nula para lidar com campos opcionais
-    $bairro = $_POST["bairro"];
-    $cep = $_POST["cep"];
-    $estado = $_POST["estado"];
-    $cidade = $_POST["cidade"];
-
     $stmt->bind_param("sssssssss", $email, $senha, $logradouro, $numero, $complemento, $bairro, $cep, $estado, $cidade);
 
     if ($stmt->execute()) {
         // Cadastro bem-sucedido. Redirecione para a página de login.
-        header("Location: login.html");
+        header("Location: http://localhost/KingPetShopXampp/login.html");
         exit();
     } else {
         echo "Erro no cadastro. Por favor, tente novamente mais tarde.";
